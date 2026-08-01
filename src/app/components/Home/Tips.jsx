@@ -32,6 +32,7 @@ const Tips = () => {
                 </div>
                 <div className='grid grid-cols-3 gap-8 mt-16'>
                     {
+                        
                         qurbaniTips.map(tip =>
                             <div key={tip.id} className='bg-white text-center rounded-3xl'>
                                 <div className='py-9'>
