@@ -1,6 +1,13 @@
 import React from 'react';
-import { Calendar, HeartHandshake, Stethoscope } from 'lucide-react';
+import { HeartHandshake } from 'lucide-react';
 import { FaRegCalendarDays } from "react-icons/fa6";
+import { PiFirstAidKitBold } from "react-icons/pi";
+import { Plus_Jakarta_Sans } from 'next/font/google';
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+    variable: "--font-plus-jakarta-sans",
+    subsets: ["latin"],
+});
 
 const qurbaniTips = [
     {
@@ -38,22 +45,22 @@ const Tips = () => {
                                 <div className='py-9'>
                                     <p className='flex justify-self-center'>
                                         {tip.id == 1 ? (
-                                            <div className="bg-[#1E4D2B] p-4 rounded-full">
-                                                <Stethoscope className="w-6 h-6 text-[#8BBD92]" />
+                                            <div className="bg-[#1E4D2B] p-4 rounded-2xl">
+                                                <PiFirstAidKitBold className="w-6 h-6 text-[#8BBD92]" />
                                             </div>
                                         ) : tip.id == 2 ? (
-                                            <div className="bg-[#FDBA45] p-4 rounded-full">
+                                            <div className="bg-[#FDBA45] p-4 rounded-2xl">
                                                 <FaRegCalendarDays className="w-6 h-6 text-[#6F4B00]" />
                                             </div>
                                         ) : tip.id == 3 ? (
-                                            <div className="bg-[#424442] p-4 rounded-full">
+                                            <div className="bg-[#424442] p-4 rounded-2xl">
                                                 <HeartHandshake className="w-6 h-6 text-[#B0B1AF]" />
                                             </div>
                                         ) : null}
                                     </p>
 
-                                    <p className={`text-[#023616] py-4 font-semibold text-2xl`}>{tip.title}</p>
-                                    <p className='w-11/12 mx-auto'>{tip.description}</p>
+                                    <p className={`text-[#023616] ${plusJakartaSans.className} py-4 font-semibold text-2xl`}>{tip.title}</p>
+                                    <p className='w-10/12 mx-auto'>{tip.description}</p>
                                 </div>
                             </div>
                         )
