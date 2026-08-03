@@ -12,7 +12,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const Banner = () => {
     return (
-        <div className='w-11/12 mx-auto flex justify-between mb-30 items-center gap-12'>
+        <div className='w-11/12 mx-auto flex justify-between mb-30 mt-8 items-center gap-12'>
             <div>
                 <h2 className={`text-5xl text-[#023616] mb-5.75 font-extrabold ${plusJakartaSans.className}`}>Find Healthy Cows & <br /> Goats for Qurbani</h2>
                 <p className='text-[#414941] mb-6'>Premium livestock sourced from certified farms. Experience <br /> transparent pricing, detailed health records, and 100% <br /> organic feeding practices.</p>

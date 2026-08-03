@@ -10,7 +10,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const NavBar = () => {
     return (
-        <div className='flex justify-between shadow px-10 py-5 items-center mb-8'>
+        <div className='flex justify-between shadow px-10 py-5 items-center'>
             <div className='flex gap-2 items-center'>
                 <MdOutlineAgriculture className='text-4xl text-[#023616]' />
                 <Link href={'/'}>

@@ -1,6 +1,7 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/sheard/NavBar";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,7 +27,10 @@ export default function RootLayout({ children }) {
       data-theme='light'
     >
       <body suppressHydrationWarning className={`min-h-full flex flex-col ${inter.className} ${plusJakartaSans.className}`}>
-        <main>{children}</main>
+        <main>
+          {children}
+          <Toaster richColors position="top-right" />
+        </main>
       </body>
     </html>
   );
