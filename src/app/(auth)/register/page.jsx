@@ -31,11 +31,27 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const SignUpPage = () => {
     const router = useRouter()
 
+    const facebookSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "facebook"
+        })
+    }
+    const githubSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "github"
+        })
+    }
+    const googleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google"
+        })
+    }
+
     const onSubmit = async (data) => {
 
         const { name, url, email, password } = data;
 
-        const { data:res, error } = await authClient.signUp.email({
+        const { data: res, error } = await authClient.signUp.email({
             name: name,
             email: email,
             password: password,
@@ -43,10 +59,10 @@ const SignUpPage = () => {
             callbackURL: "/login",
         });
 
-        if(error){
+        if (error) {
             toast.error(error.message)
         }
-        else{
+        else {
             toast.success('Signup success')
             router.push('/login')
         }
@@ -128,7 +144,7 @@ const SignUpPage = () => {
 
                     <TextField
                         name="url"
-                        type="url"
+                        type="text"
                     >
                         <Label className='text-[#023616]'>Profile Photo URL</Label>
                         <div className="relative flex items-center">
@@ -183,7 +199,7 @@ const SignUpPage = () => {
 
                 <div className="space-y-4 mb-10">
                     <div className="duration-2000">
-                        <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                        <button onClick={googleSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-4xl">
                             <FcGoogle className="text-xl" />
                             <span>Login with Google</span>
                         </button>
@@ -191,14 +207,14 @@ const SignUpPage = () => {
 
                     <div className='grid grid-cols-2 gap-2.5'>
                         <div className="duration-2000">
-                            <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                            <button onClick={githubSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-4xl">
                                 <FaGithub className="text-xl" />
                                 <span>Login with Github</span>
                             </button>
                         </div>
 
                         <div className="duration-2000">
-                            <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                            <button onClick={facebookSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-4xl">
                                 <FaFacebook className="text-xl text-[#1877F2]" />
                                 <span>Login with Facebook</span>
                             </button>

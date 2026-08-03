@@ -28,7 +28,7 @@ const LoginPage = () => {
             email: email,
             password: password,
             rememberMe: true,
-            callbackURL:'/'
+            callbackURL: '/'
         });
 
         if (error) {
@@ -38,6 +38,21 @@ const LoginPage = () => {
             toast.success('Signup success')
         }
         console.log(res, error);
+    }
+    const facebookSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "facebook"
+        })
+    }
+    const githubSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "github"
+        })
+    }
+    const googleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google"
+        })
     }
     const [showPass, setShowPass] = useState(false)
     const { handleSubmit, register } = useForm()
@@ -115,7 +130,7 @@ const LoginPage = () => {
 
                 <div className="space-y-4">
                     <div className="duration-2000">
-                        <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                        <button onClick={googleSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
                             <FcGoogle className="text-xl" />
                             <span>Login with Google</span>
                         </button>
@@ -123,20 +138,20 @@ const LoginPage = () => {
 
                     <div className='grid grid-cols-2 gap-2.5'>
                         <div className="duration-2000">
-                            <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                            <button onClick={githubSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-4xl">
                                 <FaGithub className="text-xl" />
                                 <span>Login with Github</span>
                             </button>
                         </div>
 
                         <div className="duration-2000">
-                            <button className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-3xl">
+                            <button onClick={facebookSignIn} className="flex w-full bg-white border font-medium hover:bg-[#F9F9F8] border-[#C1C9BE] btn items-center gap-2 px-4 py-6.5 rounded-4xl">
                                 <FaFacebook className="text-xl text-[#1877F2]" />
                                 <span>Login with Facebook</span>
                             </button>
                         </div>
                     </div>
-                    <p className='text-center mt-12'>Don&apos;t have an account? <Link href={'/signup'} className='text-[#033616] font-semibold'>Sign up</Link></p>
+                    <p className='text-center mt-12'>Don&apos;t have an account? <Link href={'/register'} className='text-[#033616] font-semibold'>Sign up</Link></p>
                 </div>
             </div>
 
