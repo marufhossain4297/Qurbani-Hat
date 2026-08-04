@@ -31,7 +31,7 @@ const qurbaniTips = [
 
 const Tips = () => {
     return (
-        <div className='bg-[#F5F3F3]'>
+        <div id='how-it-works' className='bg-[#F5F3F3]'>
             <div className='py-20 w-11/12 mx-auto'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold text-[#023616]'>Essential Qurbani Tips</h2>

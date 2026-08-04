@@ -18,7 +18,10 @@ const Banner = () => {
                 <p className='text-[#414941] mb-6'>Premium livestock sourced from certified farms. Experience <br /> transparent pricing, detailed health records, and 100% <br /> organic feeding practices.</p>
                 <div className="flex gap-4 items-center">
                     <button className='btn bg-[#033616] text-white px-8 py-4.5 rounded-4xl border-none font-bold'>Browse Animals</button>
-                    <button className='btn text-[#033616] border-[#033616] px-8 py-4.5 rounded-4xl border-2 font-bold'>How  it Works</button>
+
+                    <a href="#how-it-works">
+                        <button className='btn text-[#033616] border-[#033616] px-8 py-4.5 rounded-4xl border-2 font-bold'>How  it Works</button>
+                    </a>
                 </div>
             </div>
 
