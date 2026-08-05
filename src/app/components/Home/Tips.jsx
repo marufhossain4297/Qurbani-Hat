@@ -30,6 +30,7 @@ const qurbaniTips = [
 ];
 
 const Tips = () => {
+
     return (
         <div id='how-it-works' className='bg-[#F5F3F3]'>
             <div className='py-20 w-11/12 mx-auto'>

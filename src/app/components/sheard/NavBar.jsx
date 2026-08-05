@@ -28,8 +28,8 @@ const NavBar = () => {
             <div className='flex gap-3.5 items-center'>
                 <ul className='flex gap-7.75 text-[#414941] font-semibold'>
                     <li><Link href={'/animals'}>Explore</Link></li>
-                    <li><Link href={'/bookings'}>Bookings</Link></li>
-                    <li><Link href={'/profile'}>Profile</Link></li>
+                    <li><Link href={'/booking'}>Bookings</Link></li>
+                    <li><Link href={'/my-profile'}>Profile</Link></li>
                 </ul>
             </div>
             <div className='flex items-center'>

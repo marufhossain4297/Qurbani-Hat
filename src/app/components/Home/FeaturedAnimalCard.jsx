@@ -34,7 +34,7 @@ const FeaturedAnimalCard = ({ animal }) => {
                 <span style={currentStyle} className="absolute top-3 left-3 z-10 inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border shadow-sm" > {animal?.badge} </span>
             </div>
 
-            <Link href={'/animals'}>
+            <Link href={`/details-page/${animal.id}`}>
                 <div className="p-6">
                     <h2 className={`${plusJakartaSans.className} font-semibold text-2xl text-[#023616]`}>
                         {animal?.name}

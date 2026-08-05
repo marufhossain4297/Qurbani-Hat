@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import BannerImage from '@/app/images/banner.jpg'
 import Image from 'next/image';
 import { AiOutlineSafety } from "react-icons/ai";
+import Link from 'next/link';
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -14,10 +15,14 @@ const Banner = () => {
     return (
         <div className='w-11/12 mx-auto flex justify-between mb-30 mt-8 items-center gap-12'>
             <div>
-                <h2 className={`text-5xl text-[#023616] mb-5.75 font-extrabold ${plusJakartaSans.className}`}>Find Healthy Cows & <br /> Goats for Qurbani</h2>
+                <h2 className={`text-5xl text-[#023616] animate__animated animate__bounceInDown mb-5.75 font-extrabold ${plusJakartaSans.className}`}>Find Healthy Cows & <br /> Goats for Qurbani</h2>
+
                 <p className='text-[#414941] mb-6'>Premium livestock sourced from certified farms. Experience <br /> transparent pricing, detailed health records, and 100% <br /> organic feeding practices.</p>
                 <div className="flex gap-4 items-center">
-                    <button className='btn bg-[#033616] text-white px-8 py-4.5 rounded-4xl border-none font-bold'>Browse Animals</button>
+
+                    <Link href={'/animals'}>
+                        <button className='btn bg-[#033616] text-white px-8 py-4.5 rounded-4xl border-none font-bold'>Browse Animals</button>
+                    </Link>
 
                     <a href="#how-it-works">
                         <button className='btn text-[#033616] border-[#033616] px-8 py-4.5 rounded-4xl border-2 font-bold'>How  it Works</button>
@@ -36,8 +41,10 @@ const Banner = () => {
                     />
                 </div>
                 <p className='text-[#6F4B00] absolute top-6 right-6 rounded-3xl py-2 px-4 font-bold bg-[#FDBA45]'>100% Organic</p>
+
                 <p className='text-[#21502E] absolute top-18 right-6 rounded-3xl py-2 px-4 font-bold bg-[#BBEFC1]'>Verified Health</p>
-                <div className='absolute -bottom-8 -left-8 bg-white flex gap-4 p-6 border-2 border-[#C1C9BE] rounded-2xl'>
+
+                <div className='absolute animate-bounce -bottom-8 -left-8 bg-white flex gap-4 p-6 border-2 border-[#C1C9BE] rounded-2xl'>
                     <div className='bg-[#BBEFC1] px-3.5 items-center py-3.5 rounded-full'>
                         <AiOutlineSafety className='text-2xl text-center text-[#033616]' />
                     </div>

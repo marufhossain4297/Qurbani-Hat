@@ -9,12 +9,23 @@ import { FaStar } from "react-icons/fa6";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { IoIosCheckmarkCircle, IoIosSend } from "react-icons/io";
 import { FaMoneyBills } from "react-icons/fa6";
-import { toast } from 'sonner';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
     variable: "--font-plus-jakarta-sans",
     subsets: ["latin"],
 });
+
+const badgeStyles = {
+    "ORGANIC FEED": { backgroundColor: "#D1FAE5", color: "#065F46", borderColor: "#A7F3D0" },
+    "TOP RATED": { backgroundColor: "#FEF3C7", color: "#92400E", borderColor: "#FDE68A" },
+    "LIMITED": { backgroundColor: "#FEE2E2", color: "#991B1B", borderColor: "#FCA5A5" },
+    "IMPORTED": { backgroundColor: "#E0E7FF", color: "#3730A3", borderColor: "#C7D2FE" },
+    "LOCAL SPECIAL": { backgroundColor: "#FFEDD5", color: "#9A3412", borderColor: "#FED7AA" },
+    "PREMIUM BREED": { backgroundColor: "#FFE4E6", color: "#9F1239", borderColor: "#FECDD3" },
+};
+
+const defaultStyle = { backgroundColor: "#F3F4F6", color: "#1F2937", borderColor: "#E5E7EB" };
+
 
 const DetailsPage = async ({ params }) => {
     const { id } = await params
@@ -28,13 +39,20 @@ const DetailsPage = async ({ params }) => {
     const animalDetails = await animalsDetails(id)
     console.log(animalDetails);
 
+    const currentBreed = animalDetails?.badge?.toUpperCase() || "";
+    const currentStyle = badgeStyles[currentBreed] || defaultStyle;
+
     return (
         <div className='w-11/12 mx-auto gap-6 my-11.75 grid grid-cols-12'>
 
             <div className='col-span-8'>
 
-                <div>
+                <div className='relative'>
                     <Image className='rounded-3xl' src={animalDetails.image} width={792} height={445} alt={animalDetails.name} />
+
+                    <span className='bg-[#15411F] absolute top-3 left-4 text-white font-semibold py-1 px-3 rounded-full'>{animalDetails.type}</span>
+
+                    <span style={currentStyle} className={`bg-[#15411F] absolute top-3 left-24 text-white font-semibold py-1 px-3 rounded-full`}>{animalDetails.badge}</span>
                 </div>
 
                 <div className='grid grid-cols-4 gap-4 mt-12'>

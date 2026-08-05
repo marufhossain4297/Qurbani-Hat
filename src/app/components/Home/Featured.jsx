@@ -21,7 +21,7 @@ const FeaturedCards = async() => {
     const animals = await featuredAnimels()
 
     return (
-        <div className='w-11/12 mx-auto mb-8'>
+        <div className='w-11/12 mx-auto mb-8 animate__animated animate__jello'>
             <h2 className={`${plusJakartaSans.className} text-[#023616] font-bold text-3xl`}>Featured Livestock</h2>
             <div className="flex justify-between items-center">
                 <p className='text-[#414941]'>Handpicked healthy animals ready for booking</p>
