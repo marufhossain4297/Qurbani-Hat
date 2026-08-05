@@ -33,13 +33,18 @@ const AnimalCard = ({ animal }) => {
                 <Image className='rounded-t-3xl' alt={animal.name} width={376} height={246} src={animal.image} />
 
                 <span style={currentStyle} className="absolute top-3 left-3 z-10 inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border shadow-sm" > {animal.badge} </span>
+
+                <span className='bg-[#15411F] absolute bottom-2 right-2 text-white font-semibold py-1 px-3 rounded-full'>{animal.type}</span>
             </div>
 
             <div>
                 <div className="p-6">
-                    <h2 className={`${plusJakartaSans.className} font-semibold text-2xl text-[#023616]`}>
-                        {animal?.name}
-                    </h2>
+                    <div className='flex justify-between items-center'>
+                        <h2 className={`${plusJakartaSans.className} font-semibold text-2xl text-[#023616]`}>
+                            {animal?.name}
+                        </h2>
+                        <p className='text-[14px] font-bold text-[#7F5700] flex'>৳ {animal.price}</p>
+                    </div>
 
                     <div className='mt-2 mb-4 gap-1 items-center flex text-[14px] font-semibold text-[#414941]'>
                         <p>{animal.breed}</p>
