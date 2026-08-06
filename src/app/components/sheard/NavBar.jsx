@@ -17,7 +17,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const NavBar = () => {
 
-    const { data: session } = authClient.useSession()
+    const { data: session, isPending } = authClient.useSession()
     const user = session?.user
 
     const links = (
@@ -59,21 +59,35 @@ const NavBar = () => {
 
             <div className='lg:flex hidden items-center'>
                 <div>
-                    {user
-                        ?
-                        <Link href={'/my-profile'}>
-                            <Image
-                                src={user.image}
-                                width={41}
-                                height={41}
-                                alt="User Avatar"
-                                className="rounded-full bg-amber-200 object-cover"
-                            />
-                        </Link>
-                        :
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>}
+                    {
+                        isPending ? <div className="flex items-center mt-4 gap-3 animate-pulse">
+                            {/* Name skeleton placeholder */}
+                            <div className="h-6 w-28 bg-gray-200 rounded-md blur-xs" />
+
+                            {/* Avatar skeleton placeholder */}
+                            <div className="w-10 h-10 bg-gray-200 rounded-full blur-xs" />
+
+                            {/* Button skeleton placeholder */}
+                            <div className="h-10 w-24 bg-gray-200 rounded blur-xs" />
+                        </div>
+                            :
+                            user ?
+
+                                (<Link href={'/my-profile'}>
+                                    <Image
+                                        src={user.image}
+                                        width={41}
+                                        height={41}
+                                        alt="User Avatar"
+                                        className="rounded-full bg-amber-200 object-cover"
+                                    />
+                                </Link>)
+                                :
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                    }
+
                 </div>
                 {
                     user ? <p className='mx-2.5 text-[#706F6F] font-medium'> Hello, <span className="font-semibold text-black">{user ? user.name : ''}</span></p> : ''
@@ -160,7 +174,7 @@ const NavBar = () => {
                     </Drawer.Backdrop>
                 </Drawer>
             </div>
-        </div>
+        </div >
     );
 };
 
