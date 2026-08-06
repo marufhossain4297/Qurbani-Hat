@@ -7,6 +7,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 const client = new MongoClient(process.env.BETTER_AUTH_URL);
 const db = client.db('qurbani-hat');
 
+
 export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
