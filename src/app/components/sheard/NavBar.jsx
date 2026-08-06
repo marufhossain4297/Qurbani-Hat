@@ -61,13 +61,10 @@ const NavBar = () => {
                 <div>
                     {
                         isPending ? <div className="flex items-center mt-4 gap-3 animate-pulse">
-                            {/* Name skeleton placeholder */}
                             <div className="h-6 w-28 bg-gray-200 rounded-md blur-xs" />
 
-                            {/* Avatar skeleton placeholder */}
                             <div className="w-10 h-10 bg-gray-200 rounded-full blur-xs" />
 
-                            {/* Button skeleton placeholder */}
                             <div className="h-10 w-24 bg-gray-200 rounded blur-xs" />
                         </div>
                             :
