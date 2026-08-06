@@ -23,7 +23,7 @@ const AnimalsPage = async () => {
                 <h2 className={`text-[#023616] text-[32px] ${plusJakartaSans.className} font-bold`}>All Livestock</h2>
                 <p className='text-[14px] font-semibold text-[#414941]'>{animals.length} results found</p>
             </div>
-            <div className='grid grid-cols-3 gap-8 my-6 mb-12'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-6 mb-12'>
                 {
                     animals.map(animal => <AnimalCard key={animal.id} animal={animal} />)
                 }

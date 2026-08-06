@@ -29,7 +29,7 @@ const FeaturedCards = async() => {
                     <button className='text-[#033616] cursor-pointer font-bold flex items-center gap-2'>View All <FaArrowRight /> </button>
                 </Link>
             </div>
-            <div className="grid gap-6 grid-cols-4 my-8">
+            <div className="grid gap-6 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 my-8">
                 {
                     animals.map(animal => <FeaturedAnimalCard key={animal.id} animal={animal} />)
                 }

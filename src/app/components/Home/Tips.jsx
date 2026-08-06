@@ -38,7 +38,7 @@ const Tips = () => {
                     <h2 className='text-3xl font-bold text-[#023616]'>Essential Qurbani Tips</h2>
                     <p>Expert guidance for a meaningful and correct sacrifice</p>
                 </div>
-                <div className='grid grid-cols-3 gap-8 mt-16'>
+                <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 mt-16'>
                     {
 
                         qurbaniTips.map(tip =>

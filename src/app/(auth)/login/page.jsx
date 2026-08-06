@@ -57,12 +57,15 @@ const LoginPage = () => {
     const [showPass, setShowPass] = useState(false)
     const { handleSubmit, register } = useForm()
     return (
-        <div className='grid grid-cols-2 items-center bg-[#FBF9F8]'>
+        <div className='md:grid grid-cols-2 items-center bg-[#FBF9F8]'>
 
-            <div className='mx-16 items-center '>
-                <h2 className='flex gap-1 items-center mb-2 text-[#023616]'> <span className='text-3xl text-[#023616]'><MdAgriculture /></span> QurbaniHat</h2>
-                <h2 className={`${plusJakartaSans.className} mb-2`}>Welcome Back</h2>
-                <p className='text-[#414941] mb-12'>Login to manage your livestock bookings and favorites.</p>
+            <div className='md:mx-16 mx-6 items-center '>
+                <h2 className='md:flex gap-1 hidden items-center mb-2 text-[#023616]'> <span className='text-3xl text-[#023616]'><MdAgriculture /></span> QurbaniHat</h2>
+
+                <h2 className={`${plusJakartaSans.className} mb-2 pt-5 md:pt-0 text-xl font-semibold`}>Welcome Back</h2>
+
+                <p className='text-[#414941] mb-12 font-medium'>Login to manage your livestock bookings and favorites.</p>
+
                 <Form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
 
                     <TextField
@@ -78,11 +81,11 @@ const LoginPage = () => {
                     >
                         <Label className='text-[#023616]'>Email Address</Label>
                         <div className="relative flex items-center">
-                            <MdOutlineEmail className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <MdOutlineEmail className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("email")}
                                 placeholder="email@example.com"
-                                className="w-full  focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full focus:outline-none focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
                         </div>
                         <FieldError />
@@ -112,13 +115,13 @@ const LoginPage = () => {
                     >
                         <Label className='text-[#023616]'>Password</Label>
                         <div className="relative flex items-center">
-                            <MdOutlineLock className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <MdOutlineLock className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("password")}
                                 placeholder="Min. 8 characters"
-                                className="w-full  focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full focus:outline-none focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
-                            <span className="absolute cursor-pointer right-3" onClick={() => setShowPass(!showPass)}>{showPass ? <Eye /> : <EyeSlash />}</span>
+                            <span className="absolute z-3 cursor-pointer right-3" onClick={() => setShowPass(!showPass)}>{showPass ? <Eye /> : <EyeSlash />}</span>
                         </div>
                         <FieldError />
                     </TextField>
@@ -155,7 +158,7 @@ const LoginPage = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='hidden md:block'>
                 <Image src={cow} alt='Cow' />
             </div>
         </div>

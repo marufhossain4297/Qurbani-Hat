@@ -13,11 +13,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const ProfilePage = () => {
-    const { data: session } = authClient.useSession();
+    const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
+    if(isPending) return
+
     return (
-        <div className='w-8/12 border border-[#ECEFEB] rounded-3xl mx-auto my-15 relative overflow-hidden bg-white'>
+        <div className='md:w-8/12 w-10/12 border border-[#ECEFEB] rounded-3xl mx-auto my-15 relative overflow-hidden bg-white'>
             
             <div className='bg-[#1E4D2B] w-full h-32' />
 
@@ -38,8 +40,8 @@ const ProfilePage = () => {
                 </div>
             </div>
 
-            <div className='grid p-6 grid-cols-2 mx-auto gap-8'>
-                <div className='bg-[#F5F3F3] flex gap-3 items-center rounded-3xl p-6'>
+            <div className='md:grid p-6 grid-cols-2 mx-auto gap-8'>
+                <div className='bg-[#F5F3F3] flex gap-3 mb-5 md:mb-0 items-center rounded-3xl p-6'>
                     <div className='bg-[#DDE0DD] px-3 rounded-full py-3 text-[#023616]'>
                         <MdOutlineVerifiedUser />
                     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const StatsCounter = () => {
     return (
-        <div className='my-12 mx-auto grid grid-cols-4 items-center text-center'>
+        <div className='my-12 md:grid-cols-2 lg:gap-0 gap-7 grid-cols-1 mx-auto grid lg:grid-cols-4 items-center text-center'>
             <div>
                 <p className='text-5xl font-extrabold text-[#023616]'>1500+</p>
                 <p className='text-[#414941] text-[14px] font-semibold'>ANIMALS SOLD</p>

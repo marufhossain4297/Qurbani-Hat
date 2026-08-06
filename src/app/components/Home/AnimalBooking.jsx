@@ -1,25 +1,23 @@
 'use client'
 import React from 'react';
 import { toast } from 'sonner';
-import { IoMdPaperPlane } from "react-icons/io";
-import { FaCalendarDays } from "react-icons/fa6";
-import { Button, Description, FieldError, Form, Input, Label, TextArea, TextField } from '@heroui/react';
+import { FaMoneyBills } from 'react-icons/fa6';
+import { IoMdPaperPlane } from 'react-icons/io';
+import { Button, Description, FieldError, Fieldset, Form, Input, Label, Surface, TextArea, TextField } from '@heroui/react';
 
-const BookingPage = () => {
-
+const AnimalBooking = () => {
     const onSubmit = async (e) => {
         e.preventDefault()
-        // console.log(e.target.name.value);
+
         const formData = new FormData(e.currentTarget)
         const data = Object.fromEntries(formData)
-        console.log(data);
+
         if (
             data.name === '' ||
             data.email === '' ||
             data.number === '' ||
             data.address === '') {
-            toast.error('djhvcbjksh')
-            return
+            return toast.error('Please fill the input')
         }
         console.log(e.target.name);
         e.target.name.value = ''
@@ -28,20 +26,20 @@ const BookingPage = () => {
         e.target.address.value = ''
         toast.success('Booking success')
     }
-
     return (
-        <div className='md:w-5/12 w-11/12 mx-auto my-15'>
+        <div>
+            <Form className="flex border rounded-3xl border-[#E0E4DF] flex-col gap-4" onSubmit={onSubmit}>
 
-            <Form onSubmit={onSubmit} className="flex border border-[#E0E4DF] rounded-3xl flex-col gap-4">
-                <div className="bg-[#1E4D2B] flex justify-between items-center p-15 text-white rounded-t-3xl">
-                    <div>
-                        <h2 className='text-3xl font-semibold'>Booking Form</h2>
+                <div className="flex justify-between items-center bg-[#1E4D2B] text-white rounded-t-3xl p-10">
+                    <div className="">
+                        <h2 className='text-[#75A77D] text-xl font-bold mb-1'>Reserve For This Animal</h2>
                     </div>
-                    <div>
 
-                        <FaCalendarDays className='text-5xl text-[#55855F]' />
+                    <div className='text-[#55855F] text-4xl'>
+                        <FaMoneyBills />
                     </div>
                 </div>
+
                 <div className='p-8'>
                     <p className='text-[#023616] mb-4.5'>Reserve Now</p>
                     <div className="border-b border-[#C1C9BE] mb-6"></div>
@@ -52,7 +50,7 @@ const BookingPage = () => {
                         type="text"
                     >
                         <Label className='text-[#023616] mb-1.5'>Full Name</Label>
-                        <Input name='name' className="py-4 w-full placeholder:text-[#6B7280] focus:outline-none focus:ring-1 focus:ring-[#1E4D2B] border border-[#C1C9BE] shadow-none" placeholder="Enter your full name" />
+                        <Input name='name' className="py-4 focus:ring-[#1E4D2B] ring-0 placeholder:text-[#6B7280] border border-[#C1C9BE] shadow-none" placeholder="Enter your full name" />
                         <FieldError />
                     </TextField>
 
@@ -69,7 +67,7 @@ const BookingPage = () => {
                         }}
                     >
                         <Label className='text-[#023616] mb-1.5'>Email Address</Label>
-                        <Input name='email' className="py-4 w-full placeholder:text-[#6B7280] focus:outline-none focus:ring-1 focus:ring-[#1E4D2B] border border-[#C1C9BE] shadow-none" placeholder="example@mail.com" />
+                        <Input name='email' className="py-4 placeholder:text-[#6B7280] border border-[#C1C9BE] shadow-none" placeholder="example@mail.com" />
                         <FieldError />
                     </TextField>
 
@@ -81,7 +79,7 @@ const BookingPage = () => {
                         className="mb-4"
                     >
                         <Label className='text-[#023616] mb-1.5'>Phone Number</Label>
-                        <Input name='number' className="py-4 w-full placeholder:text-[#6B7280] focus:outline-none focus:ring-1 focus:ring-[#1E4D2B] border border-[#C1C9BE] shadow-none" placeholder="+880 1XXX XXXXXX" />
+                        <Input name='number' className="py-4 placeholder:text-[#6B7280] border border-[#C1C9BE] shadow-none" placeholder="+880 1XXX XXXXXX" />
                         <FieldError />
                     </TextField>
 
@@ -94,7 +92,7 @@ const BookingPage = () => {
                         className="mb-4"
                     >
                         <Label className='text-[#023616] mb-1.5'>Delivery Address</Label>
-                        <TextArea name='address' className="py-4 w-full placeholder:text-[#6B7280] focus:outline-none focus:ring-1 focus:ring-[#1E4D2B] border border-[#C1C9BE] shadow-none" rows={5} placeholder='Apartment, Street, Area, City' />
+                        <TextArea name='address' className="py-4 placeholder:text-[#6B7280] border border-[#C1C9BE] shadow-none" rows={5} placeholder='Apartment, Street, Area, City' />
                         <FieldError />
                     </TextField>
 
@@ -109,4 +107,4 @@ const BookingPage = () => {
     );
 };
 
-export default BookingPage;
+export default AnimalBooking;

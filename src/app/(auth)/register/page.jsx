@@ -74,7 +74,7 @@ const SignUpPage = () => {
     return (
         <div className='w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-15 py-10'>
 
-            <div className='flex flex-col'>
+            <div className='md:flex flex-col hidden'>
                 <Image
                     src={sheep}
                     width={870}
@@ -101,7 +101,7 @@ const SignUpPage = () => {
             <div className='shadow-[0_0_25px_rgba(0,0,0,0.1)] rounded-2xl px-10'>
                 <h2 className={`mt-10 text-[32px] font-bold ${plusJakartaSans.className}`}>Create Account</h2>
                 <p className='text-[#414941] mb-8'>Step into the future of livestock booking.</p>
-                <Form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+                <Form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:gap-4.5 gap-8">
                     <TextField
                         isRequired
                         name="name"
@@ -109,11 +109,11 @@ const SignUpPage = () => {
                     >
                         <Label className='text-[#023616]'>Full Name</Label>
                         <div className="relative flex items-center">
-                            <FaRegUser className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <FaRegUser className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("name")}
                                 placeholder="Enter your full name"
-                                className="w-full focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full focus:outline-none focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
                         </div>
                         <FieldError />
@@ -132,11 +132,11 @@ const SignUpPage = () => {
                     >
                         <Label className='text-[#023616]'>Email Address</Label>
                         <div className="relative flex items-center">
-                            <MdOutlineEmail className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <MdOutlineEmail className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("email")}
                                 placeholder="email@example.com"
-                                className="w-full  focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full focus:outline-none  focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
                         </div>
                         <FieldError />
@@ -148,11 +148,11 @@ const SignUpPage = () => {
                     >
                         <Label className='text-[#023616]'>Profile Photo URL</Label>
                         <div className="relative flex items-center">
-                            <MdOutlinePhotoSizeSelectActual className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <MdOutlinePhotoSizeSelectActual className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("url")}
                                 placeholder="https://example.com/photo.jpg"
-                                className="w-full  focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full  focus:outline-none  focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
                         </div>
                         <FieldError />
@@ -181,13 +181,13 @@ const SignUpPage = () => {
                     >
                         <Label className='text-[#023616]'>Password</Label>
                         <div className="relative flex items-center">
-                            <MdOutlineLock className="absolute left-4 text-[#023616]/70 text-xl" />
+                            <MdOutlineLock className="absolute z-3 left-4 text-[#023616]/70 text-xl" />
                             <Input
                                 {...register("password")}
                                 placeholder="Min. 8 characters"
-                                className="w-full  focus:outline-none focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
+                                className="w-full focus:outline-none focus:ring-1 focus:ring-[#023616] pl-12 pr-4 py-3 border border-[#C1C9BE] text-gray-700 placeholder:text-gray-400 text-base"
                             />
-                            <span className="absolute cursor-pointer right-3" onClick={() => setShowPass(!showPass)}>{showPass ? <Eye /> : <EyeSlash />}</span>
+                            <span className="absolute z-3 cursor-pointer right-3" onClick={() => setShowPass(!showPass)}>{showPass ? <Eye /> : <EyeSlash />}</span>
                         </div>
                         <FieldError />
                     </TextField>

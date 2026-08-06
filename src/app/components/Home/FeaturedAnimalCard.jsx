@@ -29,7 +29,7 @@ const FeaturedAnimalCard = ({ animal }) => {
     return (
         <div className='rounded-3xl shadow-[0_0_25px_rgba(0,0,0,0.1)] overflow-hidden bg-white'>
             <div className='relative'>
-                <Image className='rounded-t-3xl' alt={animal.name} width={282} height={246} src={animal.image} />
+                <Image className='rounded-t-3xl w-full' alt={animal.name} width={282} height={246} src={animal.image} />
             
                 <span style={currentStyle} className="absolute top-3 left-3 z-10 inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border shadow-sm" > {animal?.badge} </span>
             </div>
