@@ -106,7 +106,7 @@ const ProfilePage = () => {
                                 </Modal.Header>
                                 <Modal.Body className="p-6">
                                     <Surface variant="default">
-                                        <Form onClick={handleSubmit(updateData)} className="flex flex-col gap-4">
+                                        <Form onSubmit={handleSubmit(updateData)} className="flex flex-col gap-4">
 
                                             <TextField
                                                 isRequired
