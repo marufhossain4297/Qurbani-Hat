@@ -1,39 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐂 QurbaniHat – Livestock Booking Platform
 
-## Getting Started
+A modern livestock marketplace where users can explore and book animals (cows, bulls, goats) for Qurbani. Built with Next.js 16, Tailwind CSS, HeroUI, Better Auth, and MongoDB.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Demo & Links
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Live Site:** [https://maruf-qurbani-hat.vercel.app/]
+* **GitHub Repository:** [https://github.com/marufhossain4297/Qurbani-Hat]
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+* **Interactive Marketplace:** Browse livestock categorized by type, size (big, medium, small), and weight.
+* **Price-Wise Sorting:** Dynamic client-side sorting (Low to High & High to Low).
+* **Protected Animal Details & Booking:** Authenticated users can view detailed information and complete a Qurbani booking form with instant toast feedback.
+* **Authentication System:** User Login and Registration using Email/Password and Google OAuth powered by Better Auth & MongoDB Adapter.
+* **User Profile & Management:** Dedicated `/my-profile` page displaying user credentials with update options.
+* **UI Animations & Skeleton Loading:** Smooth CSS animations using `animate.css`, custom loading loaders, and HeroUI skeletons.
+* **Custom 404 & Toast Notifications:** Interactive feedback powered by `sonner`.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack & NPM Packages Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **Core Stack**
+* **Framework:** Next.js 16 (App Router)
+* **Database & Auth:** MongoDB, Better Auth (`@better-auth/mongo-adapter`)
+* **Styling:** Tailwind CSS, DaisyUI, HeroUI (`@heroui/react`)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Qurbani-Hat
-# Qurbani-Hat
-# Qurbani-Hat
+### **NPM Packages**
+* `animate.css` – CSS animation library for entrance and transition effects (Challenge #3).
+* `sonner` – Toast notification library.
+* `react-hook-form` – Form handling and validation.
+* `react-icons` & `@gravity-ui/icons` & `lucide-react` – Icon packages.
+* `react-loader-spinner` – Loader animations for fetching states.
