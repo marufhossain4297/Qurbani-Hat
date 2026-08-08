@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import { IoMdPaperPlane } from "react-icons/io";
 import { FaCalendarDays } from "react-icons/fa6";
 import { Button, Description, FieldError, Form, Input, Label, TextArea, TextField } from '@heroui/react';
+import { redirect } from 'next/navigation';
 
 const BookingPage = () => {
 
@@ -27,6 +28,7 @@ const BookingPage = () => {
         e.target.number.value = ''
         e.target.address.value = ''
         toast.success('Booking success')
+        redirect('/')
     }
 
     return (

@@ -94,7 +94,7 @@ const Footer = () => {
                     <h2 className={`text-2xl text-white font-bold ${plusJakartaSans.className}`}>Support</h2>
                     <ul className='text-[#B3C3B9] mt-6 space-y-4'>
                         <li>
-                            <Link href={'/contact'} className="hover:text-white transition-colors cursor-pointer">Contact Us</Link>
+                            <Link href={'/booking'} className="hover:text-white transition-colors cursor-pointer">Contact Us</Link>
                         </li>
                         <li>
                             <Link href={'/faqs'} className="hover:text-white transition-colors cursor-pointer">FAQs</Link>

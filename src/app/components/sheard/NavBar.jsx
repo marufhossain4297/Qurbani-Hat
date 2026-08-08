@@ -76,7 +76,7 @@ const NavBar = () => {
                                         width={41}
                                         height={41}
                                         alt="User Avatar"
-                                        className="rounded-full bg-amber-200 object-cover"
+                                        className="rounded-full"
                                     />
                                 </Link>)
                                 :
