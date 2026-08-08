@@ -144,7 +144,7 @@ const SignUpPage = () => {
 
                     <TextField
                         name="url"
-                        type="text"
+                        type="url"
                     >
                         <Label className='text-[#023616]'>Profile Photo URL</Label>
                         <div className="relative flex items-center">

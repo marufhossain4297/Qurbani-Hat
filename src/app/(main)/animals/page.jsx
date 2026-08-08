@@ -1,6 +1,6 @@
+import React from 'react';
 import AnimalCard from '@/app/components/Home/AnimalCard';
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import React from 'react';
 
 const animels = async () => {
     const res = await fetch('https://qurbani-hat-server-lbwm.onrender.com/animals')
