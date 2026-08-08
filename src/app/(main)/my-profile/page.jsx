@@ -24,7 +24,7 @@ const ProfilePage = () => {
         // e.preventDefault()
         // const name = e.target.name.value
         // const image = e.target.url.value
-        console.log(data);
+        // console.log(data);
 
         await authClient.updateUser({
             image: data.url,
@@ -106,7 +106,7 @@ const ProfilePage = () => {
                                 </Modal.Header>
                                 <Modal.Body className="p-6">
                                     <Surface variant="default">
-                                        <Form onSubmit={handleSubmit(updateData)} className="flex flex-col gap-4">
+                                        <Form className="flex flex-col gap-4">
 
                                             <TextField
                                                 isRequired
@@ -149,7 +149,7 @@ const ProfilePage = () => {
                                                 <Button slot="close" variant="secondary">
                                                     Cancel
                                                 </Button>
-                                                <Button slot="close">Update</Button>
+                                                <Button onClick={handleSubmit(updateData)} slot="close">Update</Button>
                                             </Modal.Footer>
                                         </Form>
                                     </Surface>
